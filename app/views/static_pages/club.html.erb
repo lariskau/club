@@ -1,0 +1,12 @@
+<% if logged_in? %>
+
+  <h1>Club</h1>
+    <% @users.each do |user| %>
+      <p><%= user.name %></p>
+      <p><a href="users/<%= user.id %>">Lien vers sont profils</a></p>
+    <% end %>
+
+<% else %>
+    <%= link_to "Sign up now! for going to the Club!", signup_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Log in now! for going to the Club!", login_path, class: "btn btn-lg btn-primary" %>
+<% end %>

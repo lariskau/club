@@ -1,0 +1,263 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@media (min-width:768px) {
+ .container {
+  width:503px
+ }
+}
+@media (min-width:992px) {
+ .container {
+  width:723px
+ }
+}
+@media (min-width:1200px) {
+ .container {
+  width:923px
+ }
+}
+@media (min-width:1432px) {
+ .container {
+  width:1170px
+ }
+}
+body {
+ padding-top:70px
+}
+.navbar-fixed-left,.navbar-fixed-right {
+ position:fixed;
+ top:0;
+ width:100%;
+ z-index:1030
+}
+@media (min-width:768px) {
+ .navbar-fixed-left,.navbar-fixed-right {
+  width:140px;
+  height:100vh;
+  border-radius:0
+ }
+ .navbar-fixed-left .container,.navbar-fixed-left .container-fluid,.navbar-fixed-right .container,.navbar-fixed-right .container-fluid {
+  padding-right:0;
+  padding-left:0;
+  width:auto
+ }
+ .navbar-fixed-left .navbar-header,.navbar-fixed-right .navbar-header {
+  float:none;
+  padding-left:15px;
+  padding-right:15px
+ }
+ .navbar-fixed-left .navbar-collapse,.navbar-fixed-right .navbar-collapse {
+  padding-right:0;
+  padding-left:0;
+  max-height:none
+ }
+ .navbar-fixed-left .navbar-collapse .navbar-nav,.navbar-fixed-right .navbar-collapse .navbar-nav {
+  float:none!important
+ }
+ .navbar-fixed-left .navbar-collapse .navbar-nav>li,.navbar-fixed-right .navbar-collapse .navbar-nav>li {
+  width:100%
+ }
+ .navbar-fixed-left .navbar-collapse .navbar-nav>li.dropdown .dropdown-menu,.navbar-fixed-right .navbar-collapse .navbar-nav>li.dropdown .dropdown-menu {
+  top:0
+ }
+ .navbar-fixed-left .navbar-collapse .navbar-nav.navbar-right,.navbar-fixed-right .navbar-collapse .navbar-nav.navbar-right {
+  margin-right:0
+ }
+}
+@media (min-width:768px) {
+ body {
+  padding-top:0;
+  margin-left:232px
+ }
+ .navbar-fixed-left {
+  right:auto!important;
+  left:0!important;
+  border-width:0 1px 0 0!important
+ }
+ .navbar-fixed-left .dropdown .dropdown-menu {
+  left:100%;
+  right:auto;
+  border-radius:0 3px 3px 0;
+  margin-top: -50px;
+ }
+ .navbar-fixed-left .dropdown .dropdown-toggle .caret {
+  border-top:4px solid transparent;
+  border-left:4px solid;
+  border-bottom:4px solid transparent;
+  border-right:none
+ }
+}
+
+.navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 139px;
+}
+
+
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+  margin-top: 0;
+}
